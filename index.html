@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+    <script src="../path/to/flowbite/dist/datepicker.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Bai Tap 14</title>
+</head>
+<body>
+    <section class="dark:bg-gray-300">
+
+        <div class="flex flex-col items-center font-semibold text-gray-700 m-10" id="form_info">
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 border border-gray-500">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1 class="text-center text-lg font-bold mb-10">THÔNG TIN SINH VIÊN</h1>
+                    <form class="space-y-4 md:space-y06" action="#">
+                        <div>
+                            <label for="" class="block text-gray-600 font-medium">Họ tên</label>
+                            <input type="text" id="ten" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                        </div>
+
+                        <div class="mt-3">
+                            <label for="" class="block text-gray-600 font-medium">Giới tính</label>
+                            <div class="pl-5">
+                                <input id="rd_nam" type="radio" class="" name="gioitinh" required="">
+                                <label for="rd_nam" class="">Nam</label>
+                            </div>
+                            <div class="pl-5">
+                                <input id="rd_nu" type="radio" class="" name="gioitinh" required="">
+                                <label for="rd_nu" class="">Nữ</label>
+                            </div> 
+                        </div>
+
+                        <div class="mt-3">
+                            <label for="" class="text-gray-600">Chuyên ngành</label>
+                            <select id="chuyennganh" class="bg-gray-50 border border-gray-300 text-gray-900text-sm rounded-lg w-full p-2">
+                                <option value="cnpm">Công nghệ phần mềm</option>
+                                <option value="attt">An toàn thông tin</option>
+                                <option value="khdl">Khoa học dữ liệu</option>
+                            </select>
+                        </div>
+
+                        <div class="">
+                            <label for="" class="text-gray-600">Ngày sinh</label>
+                            <input  required="" id="dtpk" datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-200 p-2.5 dark:placeholder-gray-400 dark:text-white " placeholder="mm/dd/yyyy">
+                        </div>                                       
+
+                        <div class="p-5">
+                            <button type="submit" onclick="ShowInfo(event)" class="border border-gray-700 rounded-lg w-full h-10 bg-emerald-300 hover:bg-emerald-500 hover:text-white">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center font-semibold text-gray-700 m-10" id="form_update">
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 border border-gray-500">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1 class="text-center text-lg font-bold mb-10">CẬP NHẬT THÔNG TIN SINH VIÊN</h1>
+                    <form class="space-y-4 md:space-y06" action="#">
+                        <div>
+                            <label for="" class="block text-gray-600 font-medium">Họ tên</label>
+                            <input type="text" id="ten_update" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                        </div>
+
+                        <div class="mt-3">
+                            <label for="" class="block text-gray-600 font-medium">Giới tính</label>
+                            <div class="pl-5">
+                                <input id="rd_nam_update" type="radio" class="" name="gioitinh" required="">
+                                <label for="rd_nam" class="">Nam</label>
+                            </div>
+                            <div class="pl-5">
+                                <input id="rd_nu_update" type="radio" class="" name="gioitinh" required="">
+                                <label for="rd_nu" class="">Nữ</label>
+                            </div> 
+                        </div>
+
+                        <div class="mt-3">
+                            <label for="" class="text-gray-600">Chuyên ngành</label>
+                            <select id="chuyennganh_update" class="bg-gray-50 border border-gray-300 text-gray-900text-sm rounded-lg w-full p-2">
+                                <option value="cnpm">Công nghệ phần mềm</option>
+                                <option value="attt">An toàn thông tin</option>
+                                <option value="khdl">Khoa học dữ liệu</option>
+                            </select>
+                        </div>
+
+                        <div class="">
+                            <label for="" class="text-gray-600">Ngày sinh</label>
+                            <input  required="" id="dtpk_update" datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-200 p-2.5 dark:placeholder-gray-400 dark:text-white " placeholder="mm/dd/yyyy">
+                        </div>                                       
+
+                        <div class="p-5">
+                            <button type="submit" onclick="UpdateInFo(event)" class="border border-gray-700 rounded-lg w-full h-10 bg-emerald-300 hover:bg-emerald-500 hover:text-white">Cập nhật</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="center custom_container p-10 flex justify-center items-center h-screen w-auto bg-gray-300">
+            <div class="bg-white rounded-lg p-6 center" style="width: 1600px; height: auto;">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" id="table_list_student">
+                    <caption class="text-left text-lg font-bold text-gray-700 pb-5">DANH SÁCH SINH VIÊN</caption>
+                    <thead class="text-xs text-gray-400 uppercase dark:text-gray-400">
+                        <tr>
+                            <th scope="col" style="width: 5%;">ID</th>
+                            <th scope="col" style="width: 25%;">Tên sinh viên</th>
+                            <th scope="col" style="width: 15%;">Ngày sinh</th>
+                            <th scope="col" style="width: 15%;">Giới tính</th>
+                            <th scope="col" style="width: 20%;">Chuyên ngành</th>
+                            <th scope="col" style="width: 10%;">Cập nhật</th>
+                            <th scope="col" style="width: 10%;">Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>  
+        </div> 
+        
+    </section>
+
+    <!-- ------Modal -->
+    <div id="modal_delete" tabindex="-1" class="hidden flex justify-center items-center overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <button id="close_modal" type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+                <div class="p-4 md:p-5 text-center">
+                    <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                    </svg>
+                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Bạn có chắc chắn muốn xóa thông tin sinh viên này không?</h3>
+                    <button id="delete_btn_md" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+                        Delete
+                    </button>
+                    <button id="cancel_btn_md" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
